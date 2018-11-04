@@ -1,9 +1,9 @@
 #include <fstream>
-#include <string>
 #include <iostream>
 #include <sstream>
-#include <WordSearch/WordSearch.h>
+#include <string>
 
+#include <WordSearch/WordSearch.h>
 
 WordSearch::WordSearch()
 {
@@ -11,34 +11,27 @@ WordSearch::WordSearch()
 
 WordSearch::WordSearch( const std::string& puzzleFile )
 {
-   try
+   std::ifstream inFile;
+   inFile.open( puzzleFile );
+
+   if ( !inFile )
    {
-      std::ifstream inFile;
-      inFile.open( puzzleFile );
-
-      if ( !inFile )
-      {
-          std::cout << "Unable to open file" << std::endl;
-          WordSearch();
-      }
-      else
-      {
-         std::string line;
-         while ( inFile >> line )
-         {
-            std::cout << line << std::endl;
-
-            if( _searchWords.empty() )
-               setSearchWords( line );
-//            else
-//            {
-//
-//            }
-         }
-      }
+       std::cout << "Unable to open file" << std::endl;
+       WordSearch();
    }
-   catch( ... )
+   else
    {
+      std::string line;
+
+      while ( inFile >> line )
+      {
+         if( _searchWords.empty() )
+            setSearchWords( line );
+         else
+            setPuzzleRow( line );
+      }
+
+      inFile.close();
    }
 }
 
@@ -54,6 +47,19 @@ void WordSearch::setSearchWords( std::string line )
 {
    std::stringstream ss( line );
    std::string temp;
+
    while( getline( ss, temp, ',' ) )
       _searchWords.push_back( temp );
+}
+
+void WordSearch::setPuzzleRow( std::string line )
+{
+   std::stringstream ss( line );
+   std::string temp;
+   std::vector< char > row;
+
+   while( getline( ss, temp, ',' ) )
+      row.push_back( temp[ 0 ] );
+
+   _puzzle.push_back( row );
 }

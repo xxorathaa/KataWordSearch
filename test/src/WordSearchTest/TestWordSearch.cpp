@@ -73,8 +73,15 @@ void TestWordSearch::testSetPuzzleRow()
    std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
    WordSearch ws( puzzleFile );
 
-   std::string line = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o";
-   ws.setPuzzleRow( 1, line );
+   std::string line = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O";
 
+   try
+   {
+      ws.setPuzzleRow( line );
+   }
+   catch( ... )
+   {
+      CPPUNIT_FAIL( "no expected exceptions" );
+   }
 
 }
