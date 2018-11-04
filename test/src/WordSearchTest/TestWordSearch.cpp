@@ -85,3 +85,15 @@ void TestWordSearch::testSetPuzzleRow()
    }
 
 }
+void TestWordSearch::testSearch()
+{
+   std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
+   WordSearch ws( puzzleFile );
+   std::string expected, actual;
+
+   actual = ws.search( ws.getSearchWord( 0 ) );
+
+   expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+
+   CPPUNIT_ASSERT_EQUAL( expected, actual );
+}
