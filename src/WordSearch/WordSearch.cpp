@@ -66,5 +66,10 @@ void WordSearch::setPuzzleRow( const std::string& line )
 
 std::string WordSearch::search( const std::string& word )
 {
-   return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+   std::string output;
+
+   output = word + ": ";
+
+//   return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+   return output;
 }
