@@ -67,3 +67,14 @@ void TestWordSearch::testSetSearchWords()
    CPPUNIT_ASSERT_EQUAL( std::string( "DOG" ), ws.getSearchWord( 8 ) );
    CPPUNIT_ASSERT_EQUAL( std::string( "FISH" ), ws.getSearchWord( 9 ) );
 }
+
+void TestWordSearch::testSetPuzzleRow()
+{
+   std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
+   WordSearch ws( puzzleFile );
+
+   std::string line = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o";
+   ws.setPuzzleRow( 1, line );
+
+
+}

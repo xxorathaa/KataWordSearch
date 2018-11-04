@@ -9,6 +9,7 @@ class TestWordSearch : public CppUnit::TestFixture
    CPPUNIT_TEST( testReadingExistingFile );
    CPPUNIT_TEST( testGetSearchWord );
    CPPUNIT_TEST( testSetSearchWords );
+   CPPUNIT_TEST( testSetPuzzleRow );
    CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -18,4 +19,5 @@ public:
    void testReadingExistingFile();
    void testGetSearchWord();
    void testSetSearchWords();
+   void testSetPuzzleRow();
 };
