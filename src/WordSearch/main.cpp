@@ -1,6 +1,6 @@
-#include <iostream>
+#include <WordSearch/WordSearch.h>
 
 int main( int argc, char* argv[] )
 {
-   std::cout << "hey cael" << std::endl;
+//   WordSearch ws;
 }
