@@ -1,6 +1,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <sstream>
 #include <WordSearch/WordSearch.h>
 
 
@@ -23,9 +24,16 @@ WordSearch::WordSearch( const std::string& puzzleFile )
       else
       {
          std::string line;
-         while (inFile >> line)
+         while ( inFile >> line )
          {
             std::cout << line << std::endl;
+
+            if( _searchWords.empty() )
+               setSearchWords( line );
+//            else
+//            {
+//
+//            }
          }
       }
    }
@@ -36,3 +44,16 @@ WordSearch::WordSearch( const std::string& puzzleFile )
 
 WordSearch::~WordSearch()
 {}
+
+std::string WordSearch::getSearchWord( int index )
+{
+   return _searchWords[ index ];
+}
+
+void WordSearch::setSearchWords( std::string line )
+{
+   std::stringstream ss( line );
+   std::string temp;
+   while( getline( ss, temp, ',' ) )
+      _searchWords.push_back( temp );
+}
