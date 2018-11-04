@@ -28,17 +28,17 @@
 		<link>
 			<name>TestWordSearch.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/test/src/TestWordSearch.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/test/src/WordSearchTest/TestWordSearch.cpp</locationURI>
 		</link>
 		<link>
 			<name>TestWordSearch.h</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/test/include/TestWordSearch.h</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/test/include/WordSearchTest/TestWordSearch.h</locationURI>
 		</link>
 		<link>
 			<name>main.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/src/WordSearchTest/main.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/test/src/WordSearchTest/main.cpp</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
