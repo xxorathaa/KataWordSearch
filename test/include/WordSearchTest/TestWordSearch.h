@@ -2,6 +2,8 @@
 
 #include <cppunit/extensions/HelperMacros.h>
 
+#include <WordSearch/WordSearch.h>
+
 class TestWordSearch : public CppUnit::TestFixture
 {
    CPPUNIT_TEST_SUITE( TestWordSearch );
@@ -15,8 +17,8 @@ class TestWordSearch : public CppUnit::TestFixture
    CPPUNIT_TEST_SUITE_END();
 
 public:
-//   void setUp();
-//   void tearDown();
+   void setUp();
+   void tearDown();
    void testReadingMissingFile();
    void testReadingExistingFile();
    void testGetSearchWord();
@@ -24,4 +26,7 @@ public:
    void testSetPuzzleRow();
    void testSearch_firstWord();
    void testSearch_secondWord();
+
+private:
+   WordSearch* _ws;
 };
