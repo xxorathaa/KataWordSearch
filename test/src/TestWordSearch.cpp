@@ -5,5 +5,6 @@
 CPPUNIT_TEST_SUITE_REGISTRATION( TestWordSearch );
 void TestWordSearch::testConstructor()
 {
-   CPPUNIT_ASSERT(true);
+   WordSearch ws();
+//   CPPUNIT_ASSERT(true);
 }
