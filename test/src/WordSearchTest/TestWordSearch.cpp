@@ -85,7 +85,8 @@ void TestWordSearch::testSetPuzzleRow()
    }
 
 }
-void TestWordSearch::testSearch()
+
+void TestWordSearch::testSearch_firstWord()
 {
    std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
    WordSearch ws( puzzleFile );
@@ -94,6 +95,19 @@ void TestWordSearch::testSearch()
    actual = ws.search( ws.getSearchWord( 0 ) );
 
    expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+
+   CPPUNIT_ASSERT_EQUAL( expected, actual );
+}
+
+void TestWordSearch::testSearch_secondWord()
+{
+   std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
+   WordSearch ws( puzzleFile );
+   std::string expected, actual;
+
+   actual = ws.search( ws.getSearchWord( 1 ) );
+
+   expected = "KHAN: (5,9),(5,8),(5,7),(5,6)";
 
    CPPUNIT_ASSERT_EQUAL( expected, actual );
 }

@@ -11,8 +11,9 @@ public:
    ~WordSearch();
 
    std::string getSearchWord( int index );
-   void setSearchWords( std::string line );
-   void setPuzzleRow( std::string line );
+   void setSearchWords( const std::string& line );
+   void setPuzzleRow( const std::string& line );
+   std::string search( const std::string& word );
 
 private:
    std::vector< std::string > _searchWords;

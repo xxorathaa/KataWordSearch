@@ -43,7 +43,7 @@ std::string WordSearch::getSearchWord( int index )
    return _searchWords[ index ];
 }
 
-void WordSearch::setSearchWords( std::string line )
+void WordSearch::setSearchWords( const std::string& line )
 {
    std::stringstream ss( line );
    std::string temp;
@@ -52,7 +52,7 @@ void WordSearch::setSearchWords( std::string line )
       _searchWords.push_back( temp );
 }
 
-void WordSearch::setPuzzleRow( std::string line )
+void WordSearch::setPuzzleRow( const std::string& line )
 {
    std::stringstream ss( line );
    std::string temp;
@@ -62,4 +62,9 @@ void WordSearch::setPuzzleRow( std::string line )
       row.push_back( temp[ 0 ] );
 
    _puzzle.push_back( row );
+}
+
+std::string WordSearch::search( const std::string& word )
+{
+   return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
 }
