@@ -26,6 +26,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>WordSearch.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/src/WordSearch/WordSearch.cpp</locationURI>
+		</link>
+		<link>
+			<name>WordSearch.h</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/include/WordSearch/WordSearch.h</locationURI>
+		</link>
+		<link>
 			<name>main.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/src/WordSearch/main.cpp</locationURI>
