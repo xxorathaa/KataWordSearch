@@ -81,22 +81,18 @@ void TestWordSearch::testSetPuzzleRow()
 
 void TestWordSearch::testSearch_firstWord()
 {
-   std::string expected, actual;
-
-   actual = _ws->search( _ws->getSearchWord( 0 ) );
-
-   expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
-
-   CPPUNIT_ASSERT_EQUAL( expected, actual );
+   CPPUNIT_ASSERT_EQUAL( std::string( "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)" ), _ws->search( _ws->getSearchWord( 0 ) ) );
 }
 
 void TestWordSearch::testSearch_secondWord()
 {
-   std::string expected, actual;
+   CPPUNIT_ASSERT_EQUAL( std::string( "KHAN: (5,9),(5,8),(5,7),(5,6)" ), _ws->search( _ws->getSearchWord( 1 ) ) );
+}
 
-   actual = _ws->search( _ws->getSearchWord( 1 ) );
+void TestWordSearch::testFindWord()
+{
+   std::string actual;
 
-   expected = "KHAN: (5,9),(5,8),(5,7),(5,6)";
-
-   CPPUNIT_ASSERT_EQUAL( expected, actual );
+   CPPUNIT_ASSERT( _ws->findWord( 0, 6, "BONES", actual ) );
+   CPPUNIT_ASSERT_EQUAL( std::string( "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)" ), actual );
 }
