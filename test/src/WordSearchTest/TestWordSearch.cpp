@@ -96,3 +96,8 @@ void TestWordSearch::testFindWord()
    CPPUNIT_ASSERT( _ws->findWord( 0, 6, "BONES", actual ) );
    CPPUNIT_ASSERT_EQUAL( std::string( "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)" ), actual );
 }
+
+void TestWordSearch::testGetSearchWordQuantity()
+{
+   CPPUNIT_ASSERT_EQUAL( 7, _ws->getSearchWordQuantity() );
+}

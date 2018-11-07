@@ -15,6 +15,7 @@ class TestWordSearch : public CppUnit::TestFixture
    CPPUNIT_TEST( testSearch_firstWord );
    CPPUNIT_TEST( testSearch_secondWord );
    CPPUNIT_TEST( testFindWord );
+   CPPUNIT_TEST( testGetSearchWordQuantity );
    CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -28,6 +29,7 @@ public:
    void testSearch_firstWord();
    void testSearch_secondWord();
    void testFindWord();
+   void testGetSearchWordQuantity();
 
 private:
    WordSearch* _ws;
