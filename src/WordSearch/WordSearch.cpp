@@ -62,15 +62,16 @@ void WordSearch::setPuzzleRow( const std::string& line )
       row.push_back( temp[ 0 ] );
 
    _puzzle.push_back( row );
+   _puzzleSize++;
 }
 
 std::string WordSearch::search( const std::string& word )
 {
-   for( int x = 0; x < _puzzle.size(); x++ )
+   for( int y = 0; y < _puzzleSize; y++ )
    {
-      for( int y = 0; y < _puzzle.size(); y++ )
+      for( int x = 0; x < _puzzleSize; x++ )
       {
-         if( _puzzle[ x ][ y ] == word[ 0 ] )
+         if( _puzzle[ y ][ x ] == word[ 0 ] )
          {
             std::string output;
 
@@ -83,6 +84,58 @@ std::string WordSearch::search( const std::string& word )
 
 bool WordSearch::findWord( int x, int y, const std::string& word, std::string& output )
 {
-   output = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
-   return true;
+   static const std::string EMPTY_STRING = "";
+   static const int ARR_SIZE = 8;
+   std::string words[ ARR_SIZE ] = { EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, EMPTY_STRING,
+                                     EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, EMPTY_STRING };
+
+   for( int i = 0; i < word.size(); i++ )
+   {
+      if( x + word.size() <= _puzzleSize )
+         words[ 0 ].push_back( _puzzle[ y ][ x + i ] );
+      if( x + word.size() <= _puzzleSize && y + word.size() <= _puzzleSize )
+         words[ 1 ].push_back( _puzzle[ y + i ][ x + i ] );
+      if( y + word.size() <= _puzzleSize )
+         words[ 2 ].push_back( _puzzle[ y + i ][ x ] );
+      if( x - word.size() <= _puzzleSize && y + word.size() <= _puzzleSize )
+         words[ 3 ].push_back( _puzzle[ y + i ][ x - i ] );
+      if( x - word.size() <= _puzzleSize )
+         words[ 4 ].push_back( _puzzle[ y ][ x - i ] );
+      if( x - word.size() <= _puzzleSize && y - word.size() <= _puzzleSize )
+         words[ 5 ].push_back( _puzzle[ y - i ][ x - i ] );
+      if( y - word.size() <= _puzzleSize )
+         words[ 6 ].push_back( _puzzle[ y - i ][ x ] );
+      if( x + word.size() <= _puzzleSize && y - word.size() <= _puzzleSize )
+         words[ 7 ].push_back( _puzzle[ y - i ][ x + i ] );
+   }
+
+   output = word + ": (" + std::to_string( x ) + "," + std::to_string( y ) + ")";
+
+   for( int i = 1; i < word.size(); i++ )
+   {
+      if( words[ 0 ] == word )
+         output += ",(" + std::to_string( x + i ) + "," + std::to_string( y ) + ")";
+      if( words[ 1 ] == word )
+         output += ",(" + std::to_string( x + i ) + "," + std::to_string( y + i ) + ")";
+      if( words[ 2 ] == word )
+         output += ",(" + std::to_string( x ) + "," + std::to_string( y + i ) + ")";
+      if( words[ 3 ] == word )
+         output += ",(" + std::to_string( x - i ) + "," + std::to_string( y + i ) + ")";
+      if( words[ 4 ] == word )
+         output += ",(" + std::to_string( x - i ) + "," + std::to_string( y ) + ")";
+      if( words[ 5 ] == word )
+         output += ",(" + std::to_string( x - i ) + "," + std::to_string( y - i ) + ")";
+      if( words[ 6 ] == word )
+         output += ",(" + std::to_string( x ) + "," + std::to_string( y - i ) + ")";
+      if( words[ 7 ] == word )
+         output += ",(" + std::to_string( x + i ) + "," + std::to_string( y - i ) + ")";
+   }
+
+   for( int i = 0; i < ARR_SIZE; i++ )
+   {
+      if( words[ i ] == word )
+         return true;
+   }
+
+   return false;
 }
