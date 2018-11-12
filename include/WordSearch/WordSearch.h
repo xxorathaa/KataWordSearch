@@ -15,6 +15,7 @@ public:
    void setPuzzleRow( const std::string& line );
    std::string search( const std::string& word );
    bool findWord( int x, int y, const std::string& word, std::string& output );
+   int getSearchWordQuantity();
 
 private:
    std::vector< std::string > _searchWords;

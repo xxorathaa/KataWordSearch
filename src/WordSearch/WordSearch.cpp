@@ -88,24 +88,25 @@ bool WordSearch::findWord( int x, int y, const std::string& word, std::string& o
    static const int ARR_SIZE = 8;
    std::string words[ ARR_SIZE ] = { EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, EMPTY_STRING,
                                      EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, EMPTY_STRING };
+   int wordRemainder = word.size() - 1;
 
    for( int i = 0; i < word.size(); i++ )
    {
-      if( x + word.size() <= _puzzleSize )
+      if( x + wordRemainder < _puzzleSize )
          words[ 0 ].push_back( _puzzle[ y ][ x + i ] );
-      if( x + word.size() <= _puzzleSize && y + word.size() <= _puzzleSize )
+      if( x + wordRemainder < _puzzleSize && y + wordRemainder < _puzzleSize )
          words[ 1 ].push_back( _puzzle[ y + i ][ x + i ] );
-      if( y + word.size() <= _puzzleSize )
+      if( y + wordRemainder < _puzzleSize )
          words[ 2 ].push_back( _puzzle[ y + i ][ x ] );
-      if( x - word.size() <= _puzzleSize && y + word.size() <= _puzzleSize )
+      if( x - wordRemainder >= 0 && y + wordRemainder < _puzzleSize )
          words[ 3 ].push_back( _puzzle[ y + i ][ x - i ] );
-      if( x - word.size() <= _puzzleSize )
+      if( x - wordRemainder >= 0 )
          words[ 4 ].push_back( _puzzle[ y ][ x - i ] );
-      if( x - word.size() <= _puzzleSize && y - word.size() <= _puzzleSize )
+      if( x - wordRemainder >= 0 && y - wordRemainder >= 0 )
          words[ 5 ].push_back( _puzzle[ y - i ][ x - i ] );
-      if( y - word.size() <= _puzzleSize )
+      if( y - wordRemainder >= 0 )
          words[ 6 ].push_back( _puzzle[ y - i ][ x ] );
-      if( x + word.size() <= _puzzleSize && y - word.size() <= _puzzleSize )
+      if( x + wordRemainder < _puzzleSize && y - wordRemainder >= 0 )
          words[ 7 ].push_back( _puzzle[ y - i ][ x + i ] );
    }
 
@@ -138,4 +139,9 @@ bool WordSearch::findWord( int x, int y, const std::string& word, std::string& o
    }
 
    return false;
+}
+
+int WordSearch::getSearchWordQuantity()
+{
+   return _searchWords.size();
 }
