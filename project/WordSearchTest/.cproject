@@ -29,8 +29,8 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.1611609387" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1525477891" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjectDir}/../../cppunit/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjectDir}/../../test/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjectDir}/../../include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjectDir}/../../test/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjectDir}/../../src&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.optimization.level.1945311986" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.1215061166" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>

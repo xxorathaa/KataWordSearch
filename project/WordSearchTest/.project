@@ -33,7 +33,7 @@
 		<link>
 			<name>TestWordSearch.h</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/test/include/WordSearchTest/TestWordSearch.h</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/test/src/WordSearchTest/TestWordSearch.h</locationURI>
 		</link>
 		<link>
 			<name>main.cpp</name>
