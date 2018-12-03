@@ -2,7 +2,7 @@
 #include <iostream>
 int main( int argc, char* argv[] )
 {
-   WordSearch ws( "C:\\Users\\alyss\\git\\KataWordSearch\\puzzleFile.txt" );
+   WordSearch ws( "..\\puzzleFile.txt" );
 
    for( int i = 0; i < ws.getSearchWordQuantity(); i++)
       std::cout << ws.search( ws.getSearchWord( i ) ) << std::endl;
