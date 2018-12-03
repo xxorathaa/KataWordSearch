@@ -9,7 +9,7 @@ CPPUNIT_TEST_SUITE_REGISTRATION( TestWordSearch );
 
 void TestWordSearch::setUp()
 {
-   std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
+   std::string puzzleFile = "..\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
    _ws = new WordSearch( puzzleFile );
 }
 
@@ -21,7 +21,7 @@ void TestWordSearch::testReadingMissingFile()
 {
    try
    {
-      std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\missingFile.txt";
+      std::string puzzleFile = "..\\test\\src\\WordSearchTest\\missingFile.txt";
       WordSearch ws( puzzleFile );
    }
    catch( ... )
@@ -34,7 +34,7 @@ void TestWordSearch::testReadingExistingFile()
 {
    try
    {
-      std::string puzzleFile = "C:\\Users\\alyss\\git\\KataWordSearch\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
+      std::string puzzleFile = "..\\test\\src\\WordSearchTest\\testPuzzleFile.txt";
       WordSearch ws( puzzleFile );
    }
    catch( ... )
